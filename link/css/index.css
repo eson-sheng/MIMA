@@ -1,0 +1,133 @@
+#main li {
+    width: 20%;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 6px solid #eee;
+    border-radius: 10px;
+    box-shadow: 10px;
+    vertical-align:middle;
+    display: inline;
+    float: left;
+}
+
+#main li img{
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    margin: 20px 10px;
+}
+
+#main li span {
+    font-size: 18px;
+    vertical-align: middle;
+}
+#main li p{
+    padding: 5px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    white-space: nowrap;
+}
+#main li p:last-child{
+    height: 135px;
+    margin-top: -15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    word-break: break-all;
+    white-space: pre-line;
+}
+#main > li:last-child > span{
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 64px auto;
+}
+.uname{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 3px .9em;
+    vertical-align: text-top;
+    background-image: url("./../img/uname.png");
+}
+.passd{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 2px .9em;
+    vertical-align: text-top;
+    background-image: url("./../img/passd.png");
+}
+.note{
+    
+}
+.flip,.flip_top,.flip_bottom{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    cursor: pointer;
+    float: right;
+    background-image: url("./../img/flip.png");
+}
+.del{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    cursor: pointer;
+    float: right;
+    background-image: url("./../img/del.png");
+}
+.edit{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    cursor: pointer;
+    float: right;
+    background-image: url("./../img/edit.png");
+}
+.add{
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-image: url("./../img/add1.png");
+}
+.add:hover{
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    background-image: url("./../img/add2.png");
+}
+/*滚动条隐藏*/
+.noscrollbar::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+}
+/*滚动条美化*/
+.scrollbar::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+}
+.scrollbar::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: .2rem;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #969696;
+    border-radius: .2rem;
+}
+.back{
+    transform:rotateY(-180deg);
+}
+/*去掉input自动补全后的黄色样式*/
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+-webkit-transition-delay: 99999s;
+-webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+/* -webkit-box-shadow: 0 0 0px 1000px white inset; */
+}
