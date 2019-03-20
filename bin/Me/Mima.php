@@ -32,7 +32,7 @@ class Mima
                 /*返回一个索引为结果集列名的数组*/
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 /*设置PDO属性预处理语句模拟*/
-                PDO::ATTR_EMULATE_PREPARES => FALSE,
+                PDO::ATTR_EMULATE_PREPARES => TRUE,
                 /*初始化字符集*/
                 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
             )

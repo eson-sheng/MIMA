@@ -204,7 +204,7 @@ $(function(){
                     '<input type="text" name="username" id="username"/>\n' +
                     '<br>\n' +
                     '<label for="password">密码：</label>\n' +
-                    '<input type="password" name="password" id="password"/>\n' +
+                    '<input type="text" name="password" id="password"/>\n' +
                     '<br>\n' +
                     '<label for="logo">图标：</label>\n' +
                     '<textarea name="logo" id="logo" cols="30" rows="10"></textarea>\n' +
@@ -283,7 +283,7 @@ $(function(){
                                 '<input type="text" name="username" id="username" value="{1}"/>\n' +
                                 '<br>\n' +
                                 '<label for="password">密码：</label>\n' +
-                                '<input type="password" name="password" id="password" value="{2}"/>\n' +
+                                '<input type="text" name="password" id="password" value="{2}"/>\n' +
                                 '<br>\n' +
                                 '<label for="logo">图标：</label>\n' +
                                 '<textarea name="logo" id="logo" cols="30" rows="10">{3}</textarea>\n' +
