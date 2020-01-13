@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>我的密码箱</title>
+    <link rel="shortcut icon" href="./link/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="./link/css/index.css">
 </head>
 <body>
