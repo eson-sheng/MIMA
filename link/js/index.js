@@ -263,7 +263,7 @@ $(function(){
             /*ID编号*/
             var num = $(this).attr('num');
             /*名称*/
-            var appname = $(this).parent().parent().find('span:last').html();
+            var appname = $(this).parent().parent().find('span:last').html().replace(/\"/g,'\'');
             /*账号*/
             var username = $(this).parent().parent().find('p').html().replace(/<[^>]*><\/i>/,'');
             /*密码*/
