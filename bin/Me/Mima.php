@@ -42,11 +42,11 @@ class Mima
         $this->_logo = file_get_contents('./link/img/png');
     }
 
-    public function index()
+    public function index ()
     {
         /*post发送api*/
         if (!empty($_POST['api'])) {
-            
+
             /*get*/
             if ($_POST['api'] == 'get') {
                 echo $this->_get_data();
@@ -89,7 +89,7 @@ class Mima
     }
 
     /*获取数据*/
-    private function _get_data()
+    private function _get_data ()
     {
         $sql = $this->_get_sql();
         $query = $this->_db->prepare($sql);
@@ -99,7 +99,7 @@ class Mima
     }
 
     /*添加数据*/
-    private function _add_data()
+    private function _add_data ()
     {
         if (empty($_POST['json']['appname']) ||
             empty($_POST['json']['username']) ||
@@ -107,7 +107,7 @@ class Mima
         ) {
             return json_encode([
                 'status' => FALSE,
-                'data'  =>'',
+                'data' => '',
                 'errmsg' => '未传参数不完全！'
             ]);
         }
@@ -127,23 +127,24 @@ class Mima
             $_POST['json']['appname'],
             $_POST['json']['username'],
             $_POST['json']['password'],
+            $_POST['json']['link'],
             $_POST['json']['logo'],
             $_POST['json']['note'],
         ]);
 
         return json_encode([
             'status' => TRUE,
-            'data'  => $init,
+            'data' => $init,
             'errmsg' => 'OKAY'
         ]);
     }
 
     /*查询语句*/
-    private function _get_sql()
+    private function _get_sql ()
     {
         return "
             SELECT 
-                `id`,`appname`,`username`,`password`,`logo`,`note`
+                `id`,`appname`,`username`,`password`,`link`,`logo`,`note`
             FROM
                 `mima`
             WHERE
@@ -153,20 +154,20 @@ class Mima
     }
 
     /*添加语句*/
-    private function _add_sql()
+    private function _add_sql ()
     {
         return "
-            INSERT INTO `mima` (`appname`,`username`,`password`,`logo`,`note`) VALUES (?,?,?,?,?);
+            INSERT INTO `mima` (`appname`,`username`,`password`,`link`,`logo`,`note`) VALUES (?,?,?,?,?,?);
         ";
     }
 
     /*删除数据*/
-    private function _del_data()
+    private function _del_data ()
     {
         if (empty($_POST['json']['id'])) {
             return json_encode([
                 'status' => FALSE,
-                'data'  =>'',
+                'data' => '',
                 'errmsg' => '未传参数不完全！'
             ]);
         }
@@ -180,13 +181,13 @@ class Mima
 
         return json_encode([
             'status' => TRUE,
-            'data'  => $init,
+            'data' => $init,
             'errmsg' => 'OKAY'
         ]);
     }
 
     /*删除语句*/
-    private function _del_sql()
+    private function _del_sql ()
     {
         return "
             DELETE FROM `mima` WHERE `mima`.`id` = ? ;
@@ -194,7 +195,7 @@ class Mima
     }
 
     /*修改数据*/
-    private function _edit_data()
+    private function _edit_data ()
     {
         if (empty($_POST['json']['appname']) ||
             empty($_POST['json']['username']) ||
@@ -203,9 +204,13 @@ class Mima
         ) {
             return json_encode([
                 'status' => FALSE,
-                'data'  =>'',
+                'data' => '',
                 'errmsg' => '未传参数不完全！'
             ]);
+        }
+
+        if (empty($_POST['json']['link'])) {
+            $_POST['json']['link'] = 'javascript:;';
         }
 
         if (empty($_POST['json']['logo'])) {
@@ -223,6 +228,7 @@ class Mima
             $_POST['json']['appname'],
             $_POST['json']['username'],
             $_POST['json']['password'],
+            $_POST['json']['link'],
             $_POST['json']['logo'],
             $_POST['json']['note'],
             $_POST['json']['id'],
@@ -230,19 +236,20 @@ class Mima
 
         return json_encode([
             'status' => TRUE,
-            'data'  => $init,
+            'data' => $init,
             'errmsg' => 'OKAY'
         ]);
     }
 
     /*修改语句*/
-    private function _edit_sql()
+    private function _edit_sql ()
     {
         return "
             UPDATE `mima` SET 
                 `appname` = ? , 
                 `username` = ? , 
                 `password` = ? ,
+                `link` = ? ,
                 `logo` = ? ,
                 `note` = ?  
             WHERE `mima`.`id` = ?;

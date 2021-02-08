@@ -1,2 +1,4 @@
+# phpstorm
+.idea
 # local
 config/local_web.php
