@@ -95,7 +95,8 @@ class Mima
         $query = $this->_db->prepare($sql);
         $query->execute();
         $arr = $query->fetchAll();
-        return json_encode($arr);
+        
+        return json_encode($arr, JSON_INVALID_UTF8_IGNORE);
     }
 
     /*添加数据*/

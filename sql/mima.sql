@@ -1,4 +1,5 @@
-CREATE DATABASE `mima` DEFAULT charset=utf8;
+CREATE DATABASE `mima` DEFAULT charset=utf8mb4;
+use `mima`;
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin`(
